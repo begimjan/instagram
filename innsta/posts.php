@@ -27,13 +27,13 @@ $res2 = $result2->fetch_assoc();
  	</form>
  	<?php
  $connect = mysqli_connect('127.0.0.1','root','','begimjan_17_pn');
-$result = mysqli_query($connect, "SELECT * FROM innsta INNER JOIN posts ON innsta.id = posts.users_id");
+$result = mysqli_query($connect, "SELECT * FROM innsta INNER JOIN posts ON innsta.id = posts.users_id ORDER BY innsta.id DESC");
 for($i = 0; $i<$result->num_rows; $i++){
 $res = $result->fetch_assoc();
 
  ?> 
 
- <div class="container">
+ <div class="col-5 mx-auto">
  	<h2><?php echo $res['nusu'];?></h2>
   <img src="<?php  echo $res['img']?>" class="w-100" alt="">
   <p><?php echo $res['post_text'] ?></p>
